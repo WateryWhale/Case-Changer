@@ -1,17 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+class CaseForm extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {value: "lorem ipsum"};
+  }
+  handleUpperCase(){
+    this.setState({value: this.state.value.toUpperCase()});
+  }
+  handleLowerCase(){
+    this.setState({value: this.state.value.toLowerCase()});
+  }
+  render(){
+    return (
+      <form className="mainForm">
+        <p><label for="mainTextEntry"> Insert text to be converted </label></p>
+        <textarea className="mainTextArea" value={this.state.value}>
+
+        </textarea>
+        <p>
+          <input type="button" className="upperCaseButton" value="UPPERCASE" onClick={()=>this.handleUpperCase()}/>
+          <input type="button" classsName="LowerCaseButton" value="lowercase" onClick={()=>this.handleLowerCase()}/>
+        </p>
+      </form>
+    )
+  }
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <CaseForm/>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
