@@ -6,6 +6,7 @@ class CaseForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {value: "lorem ipsum"};
+    this.handleChange = this.handleChange.bind(this);
   }
   handleUpperCase(){
     this.setState({value: this.state.value.toUpperCase()});
@@ -13,13 +14,14 @@ class CaseForm extends React.Component {
   handleLowerCase(){
     this.setState({value: this.state.value.toLowerCase()});
   }
+  handleChange(event){
+    this.setState({value: event.target.value});
+  }
   render(){
     return (
       <form className="mainForm">
         <p><label for="mainTextEntry"> Insert text to be converted </label></p>
-        <textarea className="mainTextArea" value={this.state.value}>
-
-        </textarea>
+        <textarea className="mainTextArea" value={this.state.value} onChange={this.handleChange}/>
         <p>
           <input type="button" className="upperCaseButton" value="UPPERCASE" onClick={()=>this.handleUpperCase()}/>
           <input type="button" classsName="LowerCaseButton" value="lowercase" onClick={()=>this.handleLowerCase()}/>
