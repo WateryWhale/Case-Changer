@@ -20,11 +20,13 @@ class CaseForm extends React.Component {
   render(){
     return (
       <form className="mainForm">
-        <p><label for="mainTextEntry"> Insert text to be converted </label></p>
+        <label for="mainTextEntry"> Insert text to be converted. </label> 
+        
         <textarea className="mainTextArea" value={this.state.value} onChange={this.handleChange}/>
         <p>
           <input type="button" className="upperCaseButton" value="UPPERCASE" onClick={()=>this.handleUpperCase()}/>
           <input type="button" classsName="LowerCaseButton" value="lowercase" onClick={()=>this.handleLowerCase()}/>
+          <label for="mainTextEntry"> Character Count: {this.state.value.length}</label> 
         </p>
       </form>
     )
