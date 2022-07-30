@@ -60,7 +60,7 @@ function DragDropFile(props){
 class CaseForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = {value: "lorem ipsum"};
+    this.state = {value: ""};
     this.handleChange = this.handleChange.bind(this);
   }
   handleUpperCase(){
@@ -79,7 +79,7 @@ class CaseForm extends React.Component {
     return (
       <div>
       <form className="mainForm">
-        <textarea className="mainTextArea" value={this.state.value} onChange={this.handleChange}/>
+        <textarea className="mainTextArea" placeholder="Your text here..." value={this.state.value} onChange={this.handleChange}/>
         <p>
           <input type="button" className="upperCaseButton" value="UPPERCASE" onClick={()=>this.handleUpperCase()}/>
           <input type="button" className="LowerCaseButton" value="lowercase" onClick={()=>this.handleLowerCase()}/>
