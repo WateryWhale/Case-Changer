@@ -82,8 +82,8 @@ class CaseForm extends React.Component {
         <textarea className="mainTextArea" placeholder="Your text here..." value={this.state.value} onChange={this.handleChange}/>
         <p>
           <input type="button" className="upperCaseButton" value="UPPERCASE" onClick={()=>this.handleUpperCase()}/>
-          <input type="button" className="LowerCaseButton" value="lowercase" onClick={()=>this.handleLowerCase()}/>
-          <label> Character Count: {this.state.value.length}</label> 
+          <input type="button" className="lowerCaseButton" value="lowercase" onClick={()=>this.handleLowerCase()}/>
+          <label className="labelCharCount"> Character Count: {this.state.value.length}</label> 
         </p>
         <DragDropFile onText={(text)=>this.handleText(text)}/>
       </form>
